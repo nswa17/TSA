@@ -1,0 +1,61 @@
+代入法を繰り返し用いることで,
+$$
+\xi_{t+j }= F^{j+1}\xi_{t-1} + F^j v_t + F^{j-1} v_{t+1} + \cdots + F v_{t+j-1} + v_{t+j}
+$$
+となるので, F^tの(i, j)成分をf^{(t)}_{ij} のように表記するようにすると,\\
+$$
+y_{t+j} = f^{(j+1)}_{11} y_{t-1} + f^{(j+1)}_{12} y_{t-2} + \cdots + f^{(j+1)}_{1p} y_{t-p} + f^{(j)}_{11} w_t + f^{(j-1)}_{11} w_({t+1} + \cdots + f^{(1)}_{11} w_{t+j-1} + w_{t+j}
+$$
+となる.
+よって, p次差分方程式における動学乗数は, $\frac{\partial{y_{t+j}}}{\partial{w_t}} = f^{(j)}_{11}$となる.
+
+
+
+この求め方は<!-- 不明 -->\\
+
+
+
+上で定義したFの固有値は, 
+$$
+\lambda^p - \phi_1 \lambda^{p-1} -\phi^2 \lambda^{p-2} - \cdots - \phi_{p-1} \lambda -\phi_p = 0
+$$
+をみたす$\lambda$によって与えられる.
+
+固有値が相異なる時のp次差分方程式の一般解
+$$
+F = T \Lambda T^{-1}
+$$
+とかけるので, 
+$$
+F^j = T\Lambda^j T^{-1}
+$$
+
+ここで, Tの(i, j)成分を$t_{ij}$, $T^{-1}$の(i, j)成分を$t^{ij}$ と表記することにすると,
+$$
+f^{(j)}_{11} &=& (t_{11}t^{11})\lambda^j_1 + (t_{12}t^{21})\lambda^j_2 + \cdots + (t_{1p}t^{p1})\lambda^j_p\\
+&=& c_1 \lambda_1^j + c_2\lambda_2^j + \cdots + c_p \lambda_p^j
+$$
+ただし$c_i = t_{1i}t^{i1}$
+
+また,$\sum^p_{i = 1} t_{1i}t^{i1} = 1$であることより, $\sum^p_{i=1} c_i = 1$となる.
+
+これより, 
+$$
+\frac{\partial{y_{t+j}}}{\partial{w_t}} = c_1 \lambda_1^j + c_2\lambda_2^j + \cdots + c_p \lambda_p^j
+$$
+となる.
+
+### 命題1.2
+Fの固有値が相異なるとき, 
+$$
+c_i = \frac{\lambda_i^{p-1}}{\prod^p_{k = 1, k \neq i} (\lambda_i - \lambda_k)
+$$
+
+固有値が複素数であるときの周波数は$\theta$で与えられ, $\theta = arccos(a/R)$となる.%%%
+
+また, 周期は$\frac{2\pi}{\theta}$で与えられる.
+
+
+
+固有値が重複する場合のpじ差分方程式の一般解
+
